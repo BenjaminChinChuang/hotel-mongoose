@@ -8,3 +8,10 @@
   "node": "v16.x"
 }
 ```
+
+## Push to Heroku
+
+```
+heroku create // then login
+git push herohu master
+```
