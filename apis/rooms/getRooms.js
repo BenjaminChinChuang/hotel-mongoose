@@ -3,9 +3,8 @@ const Room = require('../../models/rooms')
 
 // GET
 const getRooms = async res => {
-  const rooms = await Room.find()
-
   try {
+    const rooms = await Room.find()
     successHandle(res, {data: rooms})
   } catch (error) {
     errorHandle(res, {data: error})
