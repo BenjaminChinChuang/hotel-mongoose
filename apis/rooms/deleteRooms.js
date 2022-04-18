@@ -25,12 +25,12 @@ const deleteRooms = async (req, res) => {
 
       if (ID) {
         const rooms = await Room.findByIdAndDelete(ID)
-
         if (rooms) {
           successHandle(res, {data: `${ID} is deleted successfully.`})
+        } else {
+          // ID.length === 24 & not exsit in DB
+          errorHandle(res, {data: `ID: '${ID}' is not exsit.`})
         }
-        // ID.length === 24 & not exsit in DB
-        errorHandle(res, {data: `ID: '${ID}' is not exsit.`})
       }
     }
   } catch (error) {
